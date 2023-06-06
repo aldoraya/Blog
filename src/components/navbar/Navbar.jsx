@@ -33,7 +33,8 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="w-full h-full flex flex-row justify-between p-10 px-44">
+    <div className="w-full h-max fixed z-20">
+      <div className="flex flex-row justify-between p-8 px-44 bg-[#111]">
       <Link href="/" className="flex font-bold text-2xl">
         <nav className="text-green-400">D</nav>ooray
       </Link>
@@ -47,6 +48,7 @@ const Navbar = () => {
         <button className="px-3 py-1 bg-green-400 text-white relative bottom-1 rounded-xl">
             Logout
         </button>
+      </div>
       </div>
     </div>
   );
