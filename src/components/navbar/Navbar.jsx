@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
 
 const Navbar = () => {
   const links = [
@@ -34,12 +35,12 @@ const Navbar = () => {
 
   return (
     <div className="w-full h-max fixed z-20">
-      <div className="flex flex-row justify-between p-8 px-44 bg-[#111]">
+      <div className="flex flex-row justify-between p-8 px-44 bg-tranparent backdrop-blur-2xl">
       <Link href="/" className="flex font-bold text-2xl">
         <nav className="text-green-400">D</nav>ooray
       </Link>
       <div className="lg:flex justify-end space-x-6 hidden">
-        {/* toggle */}
+        <DarkModeToggle />
         {links.map((link) => (
           <Link key={link.id} href={link.url} className="hover:text-green-400">
             {link.title}

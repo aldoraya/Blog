@@ -9,7 +9,7 @@ const ABout = () => {
       <Image 
         src="https://images.pexels.com/photos/3194521/pexels-photo-3194521.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
         fill={true}
-        className='object-cover mt-24 backdrop-filter backdrop-grayscale' 
+        className='object-cover mt-24 z-0' 
         alt="team" />
      </div>
       <div className="flex space-x-20 pt-32">

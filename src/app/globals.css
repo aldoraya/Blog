@@ -17,8 +17,6 @@
 }
 
 body {
-  background-color: #111;
-  color: #bbb;
   max-width: 100vw;
   overflow-x: hidden;
 }
@@ -34,4 +32,18 @@ body {
   to {
     transform: translateY(0px);
   }
+}
+
+.light {
+  background-color: #fff;
+  color: #bbb;
+}
+
+.dark {
+  background-color: #111;
+  color: #bbb;
+}
+
+.theme {
+  transition: 1s all ease;
 }
