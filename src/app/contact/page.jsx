@@ -3,6 +3,11 @@ import Image from 'next/image'
 import React from 'react'
 import ContactImage from '/public/contact.png'
 
+export const metadata = {
+  title: "Blog Dooray Contact Information",
+  description: "Contact Page",
+};
+
 const Contact = () => {
   return (
     <div className="w-full h-max">

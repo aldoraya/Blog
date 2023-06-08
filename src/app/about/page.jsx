@@ -2,6 +2,11 @@ import Button from '@/components/Button/Button'
 import Image from 'next/image'
 import React from 'react'
 
+export const metadata = {
+  title: "Blog Dooray About Information",
+  description: "About Page",
+};
+
 const ABout = () => {
   return (
     <div className="w-full h-max px-44">

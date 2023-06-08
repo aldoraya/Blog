@@ -5,6 +5,11 @@ import Illustration from "/public/illustration.png";
 import Websites from "/public/websites.jpg";
 import Applications from "/public/apps.jpg";
 
+export const metadata = {
+  title: "Blog Dooray Portfolio Information",
+  description: "Portfolio Page",
+};
+
 const Portfolio = () => {
   return (
     <div>

@@ -2,7 +2,7 @@
 
 import React, { useContext } from 'react'
 import { MdOutlineLightMode, MdOutlineDarkMode } from "react-icons/md"
-import { ThemeContext } from "../../../context/ThemeContext";
+import { ThemeContext } from "../../context/ThemeContext";
 
 const DarkModeToggle = () => {
     const { toggle, mode } = useContext(ThemeContext);
