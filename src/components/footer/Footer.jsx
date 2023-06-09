@@ -8,11 +8,11 @@ import Twitter from "/public/4.png"
 const Footer = () => {
     
   return (
-    <div className="w-full h-max relative bottom-0 p-10 px-44">
+    <div className="w-full h-max absolute bottom-0 px-44 pb-4">
         <div className='flex flex-row justify-between'>
             <div className="">2023 Dooray. All right reserved</div>
             <div className="flex justify-end space-x-2">
-                <Image src={Facebook} className="cursor-pointer object-cover" width={15} height={5} alt="facebook" />
+                <Image src={Facebook} className="cursor-pointer object-cover" width={15} height={15} alt="facebook" />
                 <Image src={Youtube} width={15} height={15} alt="youtube" />
                 <Image src={Instagram} width={15} height={15} alt="instagram" />
                 <Image src={Twitter} width={15} height={15} alt="twitter" />
