@@ -4,7 +4,7 @@ import Hero from '/public/hero.png'
 
 export default function Home() {
   return (
-    <div className='w-full h-max p-10 px-44 flex justify-between'>
+    <div className='w-full h-[93.7vh] p-10 px-44 flex justify-between'>
       <div className="flex flex-col justify-start space-y-6 mt-20">
         <h1 className="text-5xl w-[60%] font-bold leading-[3.5rem] mt-8">
           <span className="inline w-full bg-clip-text bg-gradient-to-b from-green-400 to-[#bbb] text-transparent">

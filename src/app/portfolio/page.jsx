@@ -12,10 +12,10 @@ export const metadata = {
 
 const Portfolio = () => {
   return (
-    <div>
+    <div className="w-full h-[72.9vh]">
       <p className="text-2xl mt-4 font-semibold">Choose a gallery</p>
       <div className="flex space-x-72 mt-3">
-        <Link href="/portfolio/illustrations" className="w-max h-[300px]">
+        <Link href="/portfolio/illustrations" className="w-max h-auto">
           <div className="border border-white w-[250px] h-[300px] absolute">
             <Image
               src={Illustration}
@@ -26,7 +26,7 @@ const Portfolio = () => {
             <p className="absolute bottom-2 right-2 font-bold text-3xl">Illustrations</p>
           </div>
         </Link>
-        <Link href="/portfolio/websites" className="w-max h-[300px]">
+        <Link href="/portfolio/websites" className="w-max h-auto">
           <div className="border border-white w-[250px] h-[300px] absolute">
             <Image
               src={Websites}
@@ -37,7 +37,7 @@ const Portfolio = () => {
             <p className="absolute bottom-2 right-2 font-bold text-3xl">Websites</p>
           </div>
         </Link>
-         <Link href="/portfolio/applications" className="w-max h-[300px]">
+         <Link href="/portfolio/applications" className="w-max h-auto">
           <div className="border border-white w-[250px] h-[300px] absolute">
             <Image
               src={Applications}

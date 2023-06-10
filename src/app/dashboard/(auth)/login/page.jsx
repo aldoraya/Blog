@@ -1,9 +1,22 @@
 "use client";
 
 import Link from "next/link";
-import { signIn } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 const Login = () => {
+
+  const session = useSession();
+
+  const router = useRouter();
+
+  if (session.status === "authenticated") {
+    router?.push("/dashboard");
+  }
+
+  if (session.status === "loading") {
+    return <p>Loading...</p>
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();

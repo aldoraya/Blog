@@ -9,7 +9,7 @@ export const metadata = {
 
 const ABout = () => {
   return (
-    <div className="w-full h-max px-44">
+    <div className="w-full h-[110vh] px-44">
      <div className="w-full h-52 relative">
       <Image 
         src="https://images.pexels.com/photos/3194521/pexels-photo-3194521.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 

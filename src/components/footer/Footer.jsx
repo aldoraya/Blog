@@ -8,7 +8,7 @@ import Twitter from "/public/4.png"
 const Footer = () => {
     
   return (
-    <div className="w-full h-max absolute bottom-0 px-44 pb-4">
+    <div className="w-full h-max relative px-44 pb-4">
         <div className='flex flex-row justify-between'>
             <div className="">2023 Dooray. All right reserved</div>
             <div className="flex justify-end space-x-2">

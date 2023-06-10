@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
+import { signOut, useSession } from "next-auth/react";
 
 const Navbar = () => {
   const links = [
@@ -38,6 +39,8 @@ const Navbar = () => {
     },
   ];
 
+  const session = useSession();
+
   return (
     <div className="w-full h-max fixed z-20">
       <div className="flex flex-row justify-between p-8 px-44 bg-tranparent backdrop-blur-2xl">
@@ -51,9 +54,11 @@ const Navbar = () => {
             {link.title}
           </Link>
         ))}
-        <button className="px-3 py-1 bg-green-400 text-white relative bottom-1 rounded-xl">
-            Logout
-        </button>
+        {session.status === "authenticated" &&
+          <button onClick={signOut} className="px-3 py-1 bg-green-400 text-white relative bottom-1 rounded-xl">
+          Logout
+          </button>
+        }
       </div>
       </div>
     </div>
