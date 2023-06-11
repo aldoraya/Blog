@@ -31,7 +31,7 @@ const ABout = () => {
             voluptatum veritatis? Exercitationem voluptates in doloribus recusandae?
           </p>
         </div>
-        <div className="w-[50%] h-max space-y-4  text-sm text-justify">
+        <div className="w-[50%] h-max space-y-4 text-sm text-justify">
           <h2 className="text-2xl font-bold">What we do?</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat reprehenderit natus tempora, vitae tempore quod dolores est ad, 
               quidem totam sequi placeat commodi quasi temporibus unde autem voluptates, ducimus veniam!

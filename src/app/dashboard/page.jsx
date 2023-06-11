@@ -4,6 +4,7 @@ import React from "react";
 import useSWR from "swr";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 const Dashboard = () => {
   const session = useSession();
@@ -15,7 +16,7 @@ const Dashboard = () => {
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
   const { data, mutate, error, isLoading } = useSWR(
-    "/api/posts?username=${sesssion?.data?.user.name}",
+    `/api/posts?username=${session?.data?.user.name}`,
     fetcher
   );
 
@@ -37,7 +38,7 @@ const Dashboard = () => {
     try {
       await fetch("/api/posts", {
         method: "POST",
-        body: JSON.stringfy({
+        body: JSON.stringify({
           title,
           desc,
           image,
@@ -46,7 +47,7 @@ const Dashboard = () => {
         }),
       });
       mutate();
-      e.target.reset();
+      e.target.reset()
     } catch (err) {
       console.log(err);
     }
@@ -57,6 +58,7 @@ const Dashboard = () => {
       await fetch(`/api/posts/${id}`, {
         method: "DELETE",
       });
+      mutate();
     } catch (err) {
       console.log(err);
     }
@@ -64,30 +66,28 @@ const Dashboard = () => {
 
   if (session.status === "authenticated") {
     return (
-      <div className="w-full h-max pt-24 p-10 px-44 lex flex-row justify-between mt-10">
+      <div className="w-full h-max pt-24 p-10 px-44 flex flex-row justify-between space-x-10">
         {isLoading
           ? "loading"
-          : data?.map(
-              (post) => (
-                <div className="flex flex-row justify-start" key={post._id}>
+          : data?.map((post) => (
+                <div className="flex flex-col justify-start w-[50%] h-full" key={post._id}>
                   <div className="">
                     <Image
                       src={post.image}
-                      className="object-contain animate-move"
+                      className="object-cover"
                       height="400"
                       width="400"
                     />
                   </div>
                   <h2>{post.title}</h2>
-                  <span
-                    onCLick={handleDelete}
+                  <button
+                    onCLick={() => handleDelete(post._id)}
                     className="text-xl text-red-500 font-bold"
                   >
                     x
-                  </span>
+                  </button>
                 </div>
-              )
-            )}
+              ))}
         <div className="flex flex-col justify-end w-[50%] h-max">
           <form onSubmit={handleSubmit} method="post" className="space-y-4">
             <h1>Add New Post</h1>
@@ -110,10 +110,10 @@ const Dashboard = () => {
               placeholder="Content"
               className="border p-2 border-[#bbb] text-white bg-transparent rounded-md"
               cols="30"
-              rows="30"
+              rows="10"
             ></textarea>
             <div className="block">
-              <button>Send</button>
+              <button className="px-3 py-1 bg-green-400 text-white relative bottom-1 rounded-xl">Send</button>
             </div>
           </form>
         </div>
