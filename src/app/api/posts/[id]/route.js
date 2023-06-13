@@ -24,7 +24,7 @@ export const DELETE = async (request, { params }) => {
 
     await Post.findByIdAndDelete(id);
 
-    return new NextResponse("post has been delete", { status: 200 });
+    return new NextResponse("Post has been deleted", { status: 200 });
   } catch (err) {
     return new NextResponse("Database Error", { status: 500 });
   }

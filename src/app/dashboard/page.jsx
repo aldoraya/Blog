@@ -47,7 +47,7 @@ const Dashboard = () => {
         }),
       });
       mutate();
-      e.target.reset()
+      e.target.reset();
     } catch (err) {
       console.log(err);
     }
@@ -67,53 +67,61 @@ const Dashboard = () => {
   if (session.status === "authenticated") {
     return (
       <div className="w-full h-max pt-24 p-10 px-44 flex flex-row justify-between space-x-10">
+        <div className="flex flex-col justify-start w-[50%] h-full space-y-4">
         {isLoading
           ? "loading"
           : data?.map((post) => (
-                <div className="flex flex-col justify-start w-[50%] h-full" key={post._id}>
-                  <div className="">
-                    <Image
-                      src={post.image}
-                      className="object-cover"
-                      height="400"
-                      width="400"
-                    />
-                  </div>
-                  <h2>{post.title}</h2>
+              
+                <div
+                className="flex flex-row"
+                key={post._id}
+              >
+                  <Image
+                    src={post.image}
+                    className="object-cover"
+                    height="200"
+                    width="200"
+                  />
+
+                  <h2 className="text-center py-8 px-2">{post.title}</h2>
                   <button
-                    onCLick={() => handleDelete(post._id)}
-                    className="text-xl text-red-500 font-bold"
+                    onClick={() => handleDelete(post._id)}
+                    className="text-xl text-red-500 font-bold w-1 h-1"
                   >
                     x
                   </button>
-                </div>
-              ))}
+              </div>
+             
+            ))}
+             </div>
         <div className="flex flex-col justify-end w-[50%] h-max">
           <form onSubmit={handleSubmit} method="post" className="space-y-4">
             <h1>Add New Post</h1>
             <input
               type="text"
               placeholder="Title"
-              className="w-full p-2 border border-[#bbb] text-white bg-transparent rounded-md"
+              className="w-full p-2 border border-[#bbb] outline-none bg-transparent rounded-md"
             />
             <input
               type="text"
               placeholder="Desc"
-              className="w-full p-2 border border-[#bbb] text-white bg-transparent rounded-md"
+              className="w-full p-2 border border-[#bbb] outline-none bg-transparent rounded-md"
             />
             <input
               type="text"
-              placeholder="Image"
-              className="w-full p-2 border border-[#bbb] text-white bg-transparent rounded-md"
+              placeholder="Add image from pexels"
+              className="w-full p-2 border border-[#bbb] outline-none bg-transparent rounded-md"
             />
             <textarea
               placeholder="Content"
-              className="border p-2 border-[#bbb] text-white bg-transparent rounded-md"
-              cols="30"
+              className="border p-2 border-[#bbb] outline-none bg-transparent rounded-md"
+              cols="52"
               rows="10"
             ></textarea>
             <div className="block">
-              <button className="px-3 py-1 bg-green-400 text-white relative bottom-1 rounded-xl">Send</button>
+              <button className="px-6 py-1 bg-green-400 outline-none relative bottom-1 rounded-xl text-white">
+                Send
+              </button>
             </div>
           </form>
         </div>

@@ -24,9 +24,9 @@ const Blog = async () => {
   const data = await getData();
   
   return (
-    <div className="w-full h-max">
+    <div className="w-full h-max pt-24">
      {data.map((item) => (
-       <div className="pt-24 p-10 px-44">
+       <div className="pt-8 p-10 px-44">
        <div className="block">
          <Link href={`/blog/${item._id}`} key={item.id}>
            <div className="flex">
@@ -39,7 +39,7 @@ const Blog = async () => {
                />
              </div>
              <div className="flex flex-col justify-end w-[80%] p-10">
-               <h2 className="text-2xl font-bold text-white">
+               <h2 className="text-2xl font-bold">
                   {item.title}
                </h2>
                <p className="mt-2 text-justify">

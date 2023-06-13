@@ -19,9 +19,9 @@ const Contact = () => {
         </div>
         <div className="flex flex-col justify-end w-[50%] h-max">
           <form action="" method="post" className="space-y-4">
-            <input type="text" placeholder="name" className="w-full p-2 border border-[#bbb] text-white bg-transparent rounded-md" />
-            <input type="email" placeholder="email" className="w-full p-2 border border-[#bbb] text-white bg-transparent rounded-md" />
-            <textarea placeholder="message" className="border p-2 border-[#bbb] text-white bg-transparent rounded-md" cols="30" rows="10"></textarea>
+            <input type="text" placeholder="name" className="w-full p-2 border border-[#bbb] outline-none bg-transparent rounded-md" />
+            <input type="email" placeholder="email" className="w-full p-2 border border-[#bbb] outline-none bg-transparent rounded-md" />
+            <textarea placeholder="message" className="border p-2 border-[#bbb] outline-none bg-transparent rounded-md" cols="30" rows="10"></textarea>
             <div className="block">
              <Button url="#" text="Send" />
             </div>
