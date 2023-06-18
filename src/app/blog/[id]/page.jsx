@@ -27,11 +27,11 @@ const BlogPost = async ({ params }) => {
 
   return (
     <div className="w-full h-max">
-      <div className="pt-32 pb-20 px-44">
-        <div className="flex space-x-2">
-          <div className="flex flex-col justify-start w-[50%] space-y-4">
-            <h2 className="text-2xl font-semibold">{data.title}</h2>
-            <p className="text-justify">{data.desc}</p>
+      <div className="pt-20 md:pt-28 lg:pt-32 pb-20 px-8 md:px-10 lg:px-44">
+        <div className="flex flex-col md:flex-row md:space-x-6 lg:space-x-2">
+          <div className="flex flex-col justify-start md:w-[50%] space-y-4">
+            <h2 className="text-lg md:text-2xl font-semibold">{data.title}</h2>
+            <p className="text-sm md:text-base text-justify">{data.desc}</p>
             <div className="flex space-x-2">
               <div className="w-7 h-7">
                 <div className="absolute w-7 h-7">
@@ -45,11 +45,11 @@ const BlogPost = async ({ params }) => {
               <p>{data.username}</p>
             </div>
           </div>
-          <div className="flex justify-end w-[50%]">
+          <div className="mt-4 md:mt-0 md:flex md:justify-end md:w-[50%]">
             <Image src={data.image} width="400" height="500" />
           </div>
         </div>
-        <div className="block space-y-4 mt-4 text-justify">
+        <div className="block space-y-4 mt-4 text-justify text-sm md:text-base">
           {data.content.split("\n").map((paragraph, index) => (
             <p className="mb-4" key={index}>
               {paragraph}

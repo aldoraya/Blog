@@ -59,8 +59,8 @@ const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <div className="w-full h-max fixed z-20 py-6 md:pt-8 md:pb-2 lg:pb-0 px-8 md:px-20 lg:px-44 md:bg-transparent md:backdrop-blur-2xl">
-      <div className="flex flex-row justify-between">
+    <div className="w-full h-max fixed z-20 md:pt-8 md:pb-2 lg:pb-0 md:px-20 lg:px-44 md:bg-transparent md:backdrop-blur-2xl">
+      <div className="flex flex-row justify-between py-6 px-8 md:py-0 md:px-0 bg-transparent backdrop-blur-2xl md:backdrop-blur-none">
         <Link   
           href="/"
           className="flex font-bold text-base md:text-base lg:text-2xl"
