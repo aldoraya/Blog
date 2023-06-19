@@ -66,19 +66,18 @@ const Dashboard = () => {
 
   if (session.status === "authenticated") {
     return (
-      <div className="w-full h-max pt-24 p-10 px-44 flex flex-row justify-between space-x-10">
-        <div className="flex flex-col justify-start w-[50%] h-full space-y-4">
-        {isLoading
-          ? "loading"
-          : data?.map((post) => (
-              
+      <div className="w-full h-full md:h-screen lg:h-max pt-24 md:pt-24 lg:pt-24 p-8 md:p-10 px-8 md:px-10 lg:px-44 flex flex-col md:flex-row md:justify-between md:space-x-10">
+        <div className="hidden md:flex flex-col justify-start md:w-[50%] h-full space-y-4">
+          {isLoading
+            ? "loading"
+            : data?.map((post) => (
                 <div
-                className="flex flex-row"
-                key={post._id}
-              >
+                  className="flex flex-row text-sm md:text-base"
+                  key={post._id}
+                >
                   <Image
                     src={post.image}
-                    className="object-cover"
+                    className="object-cover w-[50%] z-10"
                     height="200"
                     width="200"
                   />
@@ -90,13 +89,14 @@ const Dashboard = () => {
                   >
                     x
                   </button>
-              </div>
-             
-            ))}
-             </div>
-        <div className="flex flex-col justify-end w-[50%] h-max">
+                </div>
+              ))}
+        </div>
+        <div className="flex flex-col md:justify-end md:w-[50%] h-max">
           <form onSubmit={handleSubmit} method="post" className="space-y-4">
-            <h1>Add New Post</h1>
+            <h1 className="text-center md:text-left text-lg md:text-2xl">
+              Add New Post
+            </h1>
             <input
               type="text"
               placeholder="Title"
@@ -114,16 +114,40 @@ const Dashboard = () => {
             />
             <textarea
               placeholder="Content"
-              className="border p-2 border-[#bbb] outline-none bg-transparent rounded-md"
-              cols="52"
+              className="border p-2 border-[#bbb] outline-none bg-transparent rounded-md w-full"
               rows="10"
             ></textarea>
-            <div className="block">
+            <div className="flex flex-1 justify-center md:block">
               <button className="px-6 py-1 bg-green-400 outline-none relative bottom-1 rounded-xl text-white">
                 Send
               </button>
             </div>
           </form>
+        </div>
+        <div className="flex flex-col justify-start md:hidden md:w-[50%] h-full space-y-4 mt-4">
+          {isLoading
+            ? "loading"
+            : data?.map((post) => (
+                <div
+                  className="flex flex-row text-sm md:text-base"
+                  key={post._id}
+                >
+                  <Image
+                    src={post.image}
+                    className="object-cover w-[50%] md:w-full z-10"
+                    height="200"
+                    width="200"
+                  />
+
+                  <h2 className="text-center py-8 px-2">{post.title}</h2>
+                  <button
+                    onClick={() => handleDelete(post._id)}
+                    className="text-xl text-red-500 font-bold w-1 h-1"
+                  >
+                    x
+                  </button>
+                </div>
+              ))}
         </div>
       </div>
     );
