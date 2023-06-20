@@ -6,11 +6,6 @@ import Image from "next/image";
 import React, { useRef, useState } from "react";
 import ContactImage from "/public/contact.png";
 
-export const metadata = {
-  title: "Blog Dooray Contact Information",
-  description: "Contact Page",
-};
-
 const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
