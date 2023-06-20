@@ -109,7 +109,7 @@ const Dashboard = () => {
             />
             <input
               type="text"
-              placeholder="Add image from pexels"
+              placeholder="Add image from pexels, shutterstock, unsplash, etc"
               className="w-full p-2 border border-[#bbb] outline-none bg-transparent rounded-md"
             />
             <textarea
