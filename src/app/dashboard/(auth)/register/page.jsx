@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -24,15 +24,16 @@ const Register = () => {
         body: JSON.stringify({
           name,
           email,
-          password
-        })
+          password,
+        }),
       });
 
-      res.status === 201 && router.push("/dashboard/login?success=Account has been created");
+      res.status === 201 &&
+        router.push("/dashboard/login?success=Account has been created");
     } catch (err) {
       setErr(true);
     }
-  }
+  };
 
   return (
     <div className="w-full h-screen flex flex-col justify-center items-center pt-24 px-44">
@@ -55,10 +56,14 @@ const Register = () => {
           className="w-full p-2 border border-[#bbb] text-white bg-transparent rounded-md"
           required
         />
-        <button className="px-2 w-full py-3 bg-green-400 rounded-xl text-sm text-white">Register</button>
+        <button className="px-2 w-full py-3 bg-green-400 rounded-xl text-sm text-white">
+          Register
+        </button>
       </form>
       {err && "Something wrong!"}
-      <Link href="/dashboard/login" className="text-center text-sm mt-2">Login with an existing account</Link>
+      <Link href="/dashboard/login" className="text-center text-sm mt-2">
+        Login with an existing account
+      </Link>
     </div>
   );
 };

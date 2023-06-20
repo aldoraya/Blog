@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { FormErrors } from "@/components/FormErrors/FormErrors";
 import emailjs from "emailjs-com";
@@ -73,9 +73,9 @@ const Contact = () => {
       .then(
         (result) => {
           console.log("Email sent successfully:", result.text);
-          setName('');
-          setEmail('');
-          setMessage('');
+          setName("");
+          setEmail("");
+          setMessage("");
         },
         (error) => {
           console.error("Error sending email:", error.text);
@@ -101,12 +101,12 @@ const Contact = () => {
             />
           </div>
           <div className="md:flex md:flex-col md:justify-end md:w-[50%] h-max mt-10 md:mt-0">
-            <form
-              ref={formEmail}
-              onSubmit={handleNavigation}
-              method="post"
-            >
-              <div className={`form-group space-y-4 ${errorClass(formErrors.email)}`}>
+            <form ref={formEmail} onSubmit={handleNavigation} method="post">
+              <div
+                className={`form-group space-y-4 ${errorClass(
+                  formErrors.email
+                )}`}
+              >
                 {!emailValid ? (
                   <div className="text-sm sm:text-base panel panel-default flex flex-1 justify-end text-red-500">
                     <FormErrors formErrors={formErrors} />

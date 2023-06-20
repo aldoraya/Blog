@@ -5,7 +5,6 @@ import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
 const Login = () => {
-
   const session = useSession();
 
   const router = useRouter();
@@ -15,7 +14,7 @@ const Login = () => {
   }
 
   if (session.status === "loading") {
-    return <p>Loading...</p>
+    return <p>Loading...</p>;
   }
 
   const handleSubmit = async (e) => {
@@ -23,12 +22,15 @@ const Login = () => {
     const email = e.target[0].value;
     const password = e.target[1].value;
 
-    signIn("credentials", {email, password});
-  }
+    signIn("credentials", { email, password });
+  };
 
   return (
     <div className="w-full h-screen flex flex-col justify-center items-center pt-24 px-44">
-      <button className="px-2 w-60 mb-2 py-3 bg-white rounded-xl text-sm text-[#111]" onClick={() => signIn("goolge")}>
+      <button
+        className="px-2 w-60 mb-2 py-3 bg-white rounded-xl text-sm text-[#111]"
+        onClick={() => signIn("goolge")}
+      >
         Login with google
       </button>
       <form onSubmit={handleSubmit} className="space-y-4 w-60 h-max">
