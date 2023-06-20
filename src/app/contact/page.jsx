@@ -90,7 +90,7 @@ const Contact = () => {
   return (
     <div className="w-full h-max">
       <div className="pt-24 md:pt-24 lg:pt-24 p-6 lg:p-10 px-8 md:px-20 lg:px-44">
-        <p className="text-center text-4xl font-bold">Let's Keep in Touch</p>
+        <p className="text-center text-4xl font-bold">Let`&apos;`s Keep in Touch</p>
         <div className="flex flex-col justify-center md:flex-row md:justify-between mt-10 md:space-x-10">
           <div className="flex justify-start">
             <Image
@@ -98,6 +98,7 @@ const Contact = () => {
               className="object-contain animate-move"
               height="400"
               width="400"
+              alt="contact-image"
             />
           </div>
           <div className="md:flex md:flex-col md:justify-end md:w-[50%] h-max mt-10 md:mt-0">

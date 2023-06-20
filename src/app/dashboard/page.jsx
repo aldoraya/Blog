@@ -80,6 +80,7 @@ const Dashboard = () => {
                     className="object-cover w-[50%] z-10"
                     height="200"
                     width="200"
+                    alt="post-image"
                   />
 
                   <h2 className="text-center py-8 px-2">{post.title}</h2>
@@ -137,6 +138,7 @@ const Dashboard = () => {
                     className="object-cover w-[50%] md:w-full z-10"
                     height="200"
                     width="200"
+                    alt="post-image"
                   />
 
                   <h2 className="text-center py-8 px-2">{post.title}</h2>

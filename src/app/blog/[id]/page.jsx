@@ -39,6 +39,7 @@ const BlogPost = async ({ params }) => {
                     src={data.image}
                     className="rounded-full object-cover"
                     fill={true}
+                    alt="profile-img"
                   />
                 </div>
               </div>
@@ -46,7 +47,11 @@ const BlogPost = async ({ params }) => {
             </div>
           </div>
           <div className="mt-4 md:mt-0 md:flex md:justify-end md:w-[50%]">
-            <Image src={data.image} width="400" height="500" />
+            <Image 
+            src={data.image} 
+            width="400" 
+            height="500"
+            alt="upload-img" />
           </div>
         </div>
         <div className="block space-y-4 mt-4 text-justify text-sm md:text-base">
