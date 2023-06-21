@@ -24,11 +24,11 @@ const Blog = async () => {
 
   return (
     <div className="w-full h-max pt-24 md:pt-16">
-      {data.map((item) => (
-        <div className="pb-10 px-8 md:pt-10 md:px-10 lg:px-44">
-          <div className="block">
+      <div className="pb-10 px-8 md:pt-10 md:px-10 lg:px-44">
+        <div className="block">
+          {data.map((item) => (
             <Link href={`/blog/${item._id}`} key={item.id}>
-              <div className="block md:flex">
+              <div className="block md:flex space-y-4">
                 <div className="flex justify-start">
                   <Image
                     src={item.image}
@@ -47,9 +47,9 @@ const Blog = async () => {
                 </div>
               </div>
             </Link>
-          </div>
+          ))}
         </div>
-      ))}
+      </div>
     </div>
   );
 };
