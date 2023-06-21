@@ -28,7 +28,7 @@ const Blog = async () => {
         <div className="block">
           {data.map((item) => (
             <Link href={`/blog/${item._id}`} key={item.id}>
-              <div className="block md:flex space-y-4">
+              <div className="block md:flex mb-14 md:mb-20">
                 <div className="flex justify-start">
                   <Image
                     src={item.image}
