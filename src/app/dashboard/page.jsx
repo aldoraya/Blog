@@ -21,7 +21,7 @@ const Dashboard = () => {
   );
 
   if (session.status === "loading") {
-    return <p>Loading...</p>;
+    return <div className="w-full h-screen flex flex-1 justify-center items-center">Loading...</div>;
   }
 
   if (session.status === "unauthenticated") {
