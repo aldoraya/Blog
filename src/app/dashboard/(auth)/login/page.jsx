@@ -29,7 +29,7 @@ const Login = () => {
     <div className="w-full h-screen flex flex-col justify-center items-center pt-24 px-44">
       <button
         className="px-2 w-60 mb-2 py-3 bg-white rounded-xl text-sm text-[#111]"
-        onClick={() => signIn("goolge")}
+        onClick={() => signIn("google")}
       >
         Login with google
       </button>
